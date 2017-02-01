@@ -7,22 +7,22 @@ function svgCssIcons() {
   // Base css
   var baseCss =
     '[class^="icon-"], ' +
-    '\r\n[class*=" icon-"] {' +
-      '\r\n\tdisplay: inline-block;' +
-      '\r\n\tvertical-align: middle;' +
-      '\r\n\twidth: 1em;' +
-      '\r\n\theight: 1em;' +
-      '\r\n\tbackground-position: 50% 50%;' +
-      '\r\n\tbackground-repeat: no-repeat;' +
-    '\r\n}\r\n\r\n'
+    '\n[class*=" icon-"] {' +
+      '\n\tdisplay: inline-block;' +
+      '\n\tvertical-align: middle;' +
+      '\n\twidth: 1em;' +
+      '\n\theight: 1em;' +
+      '\n\tbackground-position: 50% 50%;' +
+      '\n\tbackground-repeat: no-repeat;' +
+    '\n}\n\n'
   ;
 
   function createSvgCss(className, svgData) {
     // Create css class for each icon
     baseCss +=
       '.icon-' + className.replace(/\.[^/.]+$/, "") + ' {' +
-      '\r\n\tbackground-image: url(data:image/svg+xml;base64,' + svgData + ');' +
-      '\r\n}\r\n'
+      '\n\tbackground-image: url(data:image/svg+xml;base64,' + svgData + ');' +
+      '\n}\n'
     ;
   }
 
