@@ -1,4 +1,6 @@
-fs = require('fs');
+// Settings
+var input = 'svg/';
+var output = 'css/';
 
 // Base CSS
 var baseCss =
@@ -14,10 +16,6 @@ var baseCss =
 ;
 var iconCss = '';
 
-// Loop through SVG files
-var svgPath = 'svg/';
-var svgFiles = fs.readdirSync(svgPath);
-
 function createSvgCss(className, svgData) {
   iconCss +=
     '.icon-' + className.replace(/\.[^/.]+$/, "") + ' {' +
@@ -26,8 +24,16 @@ function createSvgCss(className, svgData) {
   ;
 }
 
+function createCss() {
+  // Create file
+  fs.writeFile(output + 'svg-icons.css', baseCss + iconCss, function (err) {
+    if (err) return console.log(err);
+    console.log(output + 'svg-icon.css successfully created.');
+  });
+}
+
 function getSvgSource(item, index) {
-  fs.readFile(svgPath + item, 'base64', function (err, data) {
+  fs.readFile(input + item, 'base64', function (err, data) {
     if (err) {
       return console.log(err);
     }
@@ -41,13 +47,9 @@ function getSvgSource(item, index) {
   });
 }
 
+fs = require('fs');
+
+// Loop through SVG files
+var svgFiles = fs.readdirSync(input);
 var itemsProcessed = 0;
 svgFiles.forEach(getSvgSource);
-
-function createCss() {
-  // Create file
-  fs.writeFile('css/svg-icons.css', baseCss + iconCss, function (err) {
-    if (err) return console.log(err);
-    console.log('/css/svg-icon.css successfully created.');
-  });
-}
