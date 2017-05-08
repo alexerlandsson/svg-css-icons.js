@@ -1,0 +1,24 @@
+{
+  "name": "svg-css-icons",
+  "version": "1.0.0",
+  "description": "A npm package to generate css icons from svg",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexerlandsson/svg-css-icons.js.git"
+  },
+  "keywords": [
+    "css",
+    "svg",
+    "icons"
+  ],
+  "author": "Alexander Erlandsson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexerlandsson/svg-css-icons.js/issues"
+  },
+  "homepage": "https://github.com/alexerlandsson/svg-css-icons.js#readme"
+}
